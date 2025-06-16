@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 // eslint-disable-next-line camelcase
-import { Geist, Geist_Mono } from 'next/font/google'
 
 import StyledComponentsRegistry from '@/lib/registry'
 import { Providers } from './providers'
+import { ThemeProvider } from 'styled-components'
+import theme from '@/styles/theme'
 
 // const geistSans = Geist({
 //   variable: '--font-geist-sans',
@@ -28,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body>
-        <StyledComponentsRegistry>
-          <Providers>{children}</Providers>
-        </StyledComponentsRegistry>
+        <ThemeProvider theme={theme}>
+          <StyledComponentsRegistry>
+            <Providers>{children}</Providers>
+          </StyledComponentsRegistry>
+        </ThemeProvider>
       </body>
     </html>
   )
