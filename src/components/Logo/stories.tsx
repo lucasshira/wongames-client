@@ -7,4 +7,10 @@ export default {
   tags: ['autodocs']
 } as Meta<typeof Logo>
 
-export const Default: StoryObj<typeof Logo> = {}
+export const Default: StoryObj<typeof Logo> = {
+  args: {
+    isHideOnMobile: true,
+    color: 'white',
+    size: 'normal'
+  }
+}
