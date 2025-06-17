@@ -10,7 +10,6 @@ const dirname =
     ? __dirname
     : path.dirname(fileURLToPath(import.meta.url))
 
-// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   test: {
     workspace: [
