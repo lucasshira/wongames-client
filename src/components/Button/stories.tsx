@@ -33,3 +33,11 @@ export const withIcon: StoryObj<typeof Button> = {
   },
   render: (args) => <Button size="small" {...args} />
 }
+
+export const asLink: StoryObj<typeof Button> = {
+  args: {
+    children: 'Add to cart',
+    as: 'a'
+  },
+  render: (args) => <Button size="large" as="a" {...args} />
+}

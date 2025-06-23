@@ -28,10 +28,6 @@ const wrapperModifiers = {
   `,
 
   withIcon: (theme: DefaultTheme) => css`
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
     :first-child {
       display: flex;
     }
@@ -51,9 +47,17 @@ export const Wrapper = styled.button<WrapperProps>`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     color: ${theme.colors.white};
     border: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};
     cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      background: linear-gradient(100deg, #e35565 0%, #d958a6 50%);
+    }
 
     ${!!size && wrapperModifiers[size](theme)}
     ${isFullWidth && wrapperModifiers.isFullWidth()}
