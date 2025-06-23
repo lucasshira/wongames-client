@@ -36,7 +36,7 @@ describe('<Logo />', () => {
     renderWithTheme(<Logo />)
     expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
       width: '11rem',
-      height: '3.3rem'
+      height: '4.5rem'
     })
   })
 })

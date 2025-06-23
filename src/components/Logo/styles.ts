@@ -6,7 +6,7 @@ import type { LogoProps } from '.'
 const wrapperModifiers = {
   normal: () => css`
     width: 11rem;
-    height: 3.3rem;
+    height: 4.5rem;
   `,
 
   large: () => css`

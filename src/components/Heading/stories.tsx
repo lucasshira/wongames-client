@@ -14,7 +14,11 @@ export default {
 
 export const Default: StoryObj<typeof Heading> = {
   args: {
-    children: 'Most popular'
+    children: 'Most popular',
+    size: 'medium',
+    lineLeft: false,
+    color: 'white',
+    lineBottom: false
   },
   render: (args) => <Heading {...args} />
 }

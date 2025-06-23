@@ -25,13 +25,23 @@ export const LogoWrapper = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  `}
+  `};
 `
 
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: ${theme.spacings.xsmall};
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    ${media.greaterThan('medium')`
+      gap: ${theme.spacings.small}  
+    `}
+
+    > div {
+      margin-left: ${theme.spacings.xsmall};
+    }
   `}
 `
 
@@ -89,11 +99,17 @@ export const MenuFull = styled.nav<MenuFullProps>`
 `
 
 export const MenuNav = styled.div`
+  ${({ theme }) => css`
+    ${media.greaterThan('medium')`
+      margin-left: ${theme.spacings.xxxlarge};
+    `}
+  `}
 `
 
 export const MenuLink = styled.a`
   ${({ theme }) => css`
     position: relative;
+    color: ${theme.colors.white};
     margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
     text-align: center;

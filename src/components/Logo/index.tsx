@@ -15,8 +15,6 @@ function Logo({
     <S.Wrapper color={color} size={size} isHideOnMobile={isHideOnMobile}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="158"
-        height="48"
         fill="none"
         role="img"
         aria-label="Won Games"

@@ -10,6 +10,7 @@ import {
 
 import Logo from '../Logo'
 import Button from '../Button'
+import MediaMatch from '../MediaMatch'
 
 interface MenuProps {
   username?: string
@@ -20,13 +21,26 @@ function Menu({ username }: MenuProps) {
 
   return (
     <S.Wrapper aria-label="menu">
-      <S.IconWrapper onClick={() => setIsOpenMenu(true)}>
-        <MenuIcon size={24} aria-label="Open Menu" />
-      </S.IconWrapper>
+      <MediaMatch lessThan="medium">
+        <S.IconWrapper onClick={() => setIsOpenMenu(true)}>
+          <MenuIcon size={24} aria-label="Open Menu" />
+        </S.IconWrapper>
+      </MediaMatch>
 
       <S.LogoWrapper role="img" aria-label="Won Games Logo">
         <Logo isHideOnMobile aria-label="Logo" />
       </S.LogoWrapper>
+
+      <MediaMatch greaterThan="medium">
+        <S.MenuNav>
+          <S.MenuLink href="/" aria-label="Home">
+            Home
+          </S.MenuLink>
+          <S.MenuLink href="/store" aria-label="Store">
+            Store
+          </S.MenuLink>
+        </S.MenuNav>
+      </MediaMatch>
 
       <S.MenuGroup>
         <S.IconWrapper>
@@ -35,6 +49,10 @@ function Menu({ username }: MenuProps) {
         <S.IconWrapper>
           <ShoppingCartIcon size={24} aria-label="Shopping Cart" />
         </S.IconWrapper>
+
+        <MediaMatch greaterThan="medium">
+          {!username && <Button>Sign in</Button>}
+        </MediaMatch>
       </S.MenuGroup>
 
       <S.MenuFull isOpenMenu={isOpenMenu} aria-hidden={!isOpenMenu}>
